@@ -5,152 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CLUB★ONE 지명 메뉴 — 猟一 료이치</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
   body{
     color:#ece2d0;
     font-family:'Noto Sans KR', sans-serif;
     line-height:1.7;
     font-size:15px;
+  }
+  .page-bg{
     background:#0f0d10;
-    overflow-x:hidden;
-    position:relative;
   }
-
-  /* ---------- ambient nightclub background ---------- */
-  .bg-glow{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background:
-      radial-gradient(circle at 20% 15%, rgba(200,30,80,0.28), transparent 40%),
-      radial-gradient(circle at 82% 20%, rgba(60,130,255,0.16), transparent 38%),
-      radial-gradient(circle at 50% 90%, rgba(201,162,75,0.16), transparent 45%);
-    animation:bgDrift 14s ease-in-out infinite alternate;
-  }
-  @keyframes bgDrift{
-    0%{filter:hue-rotate(0deg) brightness(1);}
-    100%{filter:hue-rotate(18deg) brightness(1.12);}
-  }
-  #sparkle-layer{
-    position:fixed; inset:0; z-index:1; pointer-events:none; overflow:hidden;
-  }
-  .spark{
-    position:absolute;
-    width:3px; height:3px;
-    background:#f7dfa0;
-    border-radius:50%;
-    box-shadow:0 0 6px 1px rgba(247,223,160,0.9);
-    opacity:0;
-    animation:twinkle linear infinite;
-  }
-  @keyframes twinkle{
-    0%{opacity:0; transform:translateY(0) scale(0.6);}
-    10%{opacity:1;}
-    50%{opacity:0.9; transform:translateY(-40vh) scale(1.1);}
-    90%{opacity:0.2;}
-    100%{opacity:0; transform:translateY(-80vh) scale(0.5);}
-  }
-
-  .page-bg{ position:relative; z-index:2; }
   .wrap{max-width:680px; margin:0 auto; padding:0 18px 60px;}
 
   /* header */
   .top-bar{
     text-align:center;
     padding:22px 0 16px;
-    letter-spacing:0.16em;
+    letter-spacing:0.12em;
     font-size:0.7rem;
-    color:#f0d38a;
+    color:#c9a24b;
     border-bottom:1px solid rgba(201,162,75,0.35);
-    text-shadow:0 0 10px rgba(240,211,138,0.7), 0 0 22px rgba(240,211,138,0.35);
-    animation:signFlicker 5s infinite;
-  }
-  @keyframes signFlicker{
-    0%,19%,21%,23%,54%,56%,100%{opacity:1;}
-    20%,22%,55%{opacity:0.55;}
   }
 
   .hero{
     text-align:center;
-    padding:40px 0 34px;
+    padding:36px 0 30px;
     border-bottom:1px solid rgba(201,162,75,0.35);
-    position:relative;
   }
-
-  /* spinning gold halo behind the photo */
-  .photo-wrap{
-    position:relative;
-    width:158px; height:198px;
-    margin:0 auto 18px;
-  }
-  .photo-wrap::before{
-    content:'';
-    position:absolute;
-    inset:-14px;
-    border-radius:6px;
-    background:conic-gradient(from 0deg, #c9a24b, transparent 25%, #8e1b2e 50%, transparent 75%, #c9a24b);
-    filter:blur(9px);
-    opacity:0.65;
-    animation:spin 6s linear infinite;
-  }
-  @keyframes spin{ to{ transform:rotate(360deg); } }
-
   .photo-frame{
-    position:relative;
     width:150px; height:190px;
-    margin:0 auto;
+    margin:0 auto 18px;
     border:1px solid #c9a24b;
     padding:5px;
-    background:#0f0d10;
-    box-shadow:0 0 24px rgba(201,162,75,0.45), inset 0 0 12px rgba(201,162,75,0.15);
   }
   .photo-frame img{
     width:100%; height:100%;
     object-fit:cover;
     display:block;
   }
-
   .rank{
     display:inline-block;
     border:1px solid #c9a24b;
     color:#f0d38a;
     font-size:0.85rem;
-    letter-spacing:0.1em;
-    padding:4px 16px;
+    letter-spacing:0.08em;
+    padding:3px 14px;
     border-radius:2px;
-    margin-bottom:16px;
-    box-shadow:0 0 14px rgba(240,211,138,0.55);
-    animation:rankPulse 2.4s ease-in-out infinite;
+    margin-bottom:14px;
   }
-  @keyframes rankPulse{
-    0%,100%{ box-shadow:0 0 10px rgba(240,211,138,0.4); }
-    50%{ box-shadow:0 0 22px rgba(240,211,138,0.85), 0 0 40px rgba(240,211,138,0.3); }
-  }
-
   h1{
     font-family:'Noto Serif KR', serif;
     font-weight:900;
-    font-size:2.7rem;
+    font-size:2.6rem;
     letter-spacing:0.08em;
-    background:linear-gradient(100deg, #ece2d0 20%, #fff3cf 40%, #c9a24b 50%, #fff3cf 60%, #ece2d0 80%);
-    background-size:250% auto;
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    animation:shimmer 4.5s linear infinite;
-  }
-  @keyframes shimmer{
-    0%{ background-position:0% 50%; }
-    100%{ background-position:250% 50%; }
+    color:#ece2d0;
   }
   .sub-en{
-    font-family:'Cormorant Garamond', serif;
-    font-style:italic;
-    font-size:0.95rem;
-    letter-spacing:0.2em;
+    font-size:0.85rem;
+    letter-spacing:0.15em;
     color:#c9a24b;
-    margin-top:10px;
+    margin-top:8px;
   }
   .real-name{
     font-size:0.78rem;
@@ -158,53 +74,38 @@
     margin-top:6px;
   }
   .tag-row{
-    margin-top:20px;
+    margin-top:18px;
     font-size:0.75rem;
     color:#a89a89;
   }
   .tag-row span{
     display:inline-block;
-    border:1px solid rgba(201,162,75,0.45);
+    border:1px solid rgba(201,162,75,0.35);
     padding:4px 10px;
     border-radius:2px;
     margin:3px;
-    transition:all .25s ease;
-  }
-  .tag-row span:hover{
-    color:#0f0d10;
-    background:#f0d38a;
-    box-shadow:0 0 14px rgba(240,211,138,0.8);
   }
 
   /* sections */
   section{
-    padding:32px 0;
+    padding:30px 0;
     border-bottom:1px solid rgba(201,162,75,0.35);
   }
   .sec-title{
     font-family:'Noto Serif KR', serif;
     font-weight:700;
-    font-size:1.28rem;
+    font-size:1.25rem;
     color:#ece2d0;
-    margin-bottom:18px;
-    padding-left:12px;
+    margin-bottom:16px;
+    padding-left:10px;
     border-left:3px solid #c9a24b;
-    position:relative;
-  }
-  .sec-title::after{
-    content:'✦';
-    position:absolute;
-    right:0; top:2px;
-    color:#c9a24b;
-    font-size:0.85rem;
-    opacity:0.7;
   }
   .sec-title small{
     display:block;
     font-family:sans-serif;
     font-weight:400;
     font-size:0.68rem;
-    letter-spacing:0.12em;
+    letter-spacing:0.1em;
     color:#a89a89;
     margin-top:3px;
   }
@@ -216,12 +117,9 @@
   }
   table.info th, table.info td{
     text-align:left;
-    padding:10px 8px;
+    padding:9px 8px;
     border-bottom:1px solid rgba(201,162,75,0.18);
     vertical-align:top;
-  }
-  table.info tr:hover td, table.info tr:hover th{
-    background:rgba(201,162,75,0.06);
   }
   table.info th{
     width:88px;
@@ -236,88 +134,60 @@
     margin-bottom:12px;
   }
   p.prose:last-child{margin-bottom:0;}
-  p.prose b{
-    color:#f0d38a;
-    text-shadow:0 0 8px rgba(240,211,138,0.4);
-  }
+  p.prose b{color:#f0d38a;}
 
   .quote-box{
-    background:linear-gradient(135deg, #241018, #1c1520);
+    background:#1c1520;
     border-left:3px solid #c9a24b;
-    padding:18px 20px;
-    margin:18px 0;
+    padding:16px 18px;
+    margin:16px 0;
     border-radius:2px;
-    box-shadow:0 0 26px rgba(142,27,46,0.35), inset 0 0 20px rgba(201,162,75,0.05);
-    position:relative;
-    overflow:hidden;
-  }
-  .quote-box::before{
-    content:'';
-    position:absolute; inset:0;
-    background:linear-gradient(120deg, transparent 30%, rgba(240,211,138,0.12) 50%, transparent 70%);
-    background-size:250% 100%;
-    animation:shimmer 6s linear infinite;
   }
   .quote-box span.qlabel{
     display:block;
     font-size:0.72rem;
     color:#f0d38a;
-    letter-spacing:0.08em;
-    margin-bottom:12px;
-    position:relative;
+    letter-spacing:0.05em;
+    margin-bottom:10px;
   }
   .quote-box p{
     font-family:'Noto Serif KR', serif;
-    font-size:0.96rem;
-    margin-bottom:9px;
-    position:relative;
+    font-size:0.95rem;
+    margin-bottom:8px;
   }
   .quote-box p:last-child{margin-bottom:0;}
 
   ul.trivia{list-style:none;}
   ul.trivia li{
-    padding:10px 0 10px 20px;
+    padding:10px 0 10px 18px;
     border-bottom:1px solid rgba(201,162,75,0.15);
     font-size:0.92rem;
     position:relative;
   }
   ul.trivia li::before{
-    content:'✧';
+    content:'-';
     position:absolute; left:0; color:#c9a24b;
   }
   ul.trivia li:last-child{border-bottom:none;}
 
   .rel{
-    padding:11px 0;
+    padding:10px 0;
     border-bottom:1px solid rgba(201,162,75,0.15);
     font-size:0.92rem;
   }
   .rel:last-child{border-bottom:none;}
-  .rel b{
-    color:#f0d38a;
-    margin-right:6px;
-    text-shadow:0 0 6px rgba(240,211,138,0.35);
-  }
+  .rel b{color:#f0d38a; margin-right:6px;}
 
   footer{
     text-align:center;
-    padding:28px 0 10px;
+    padding:26px 0 6px;
     font-size:0.72rem;
     color:#a89a89;
-    letter-spacing:0.04em;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
   }
 </style>
 </head>
 <body>
-
-<div class="bg-glow"></div>
-<div id="sparkle-layer"></div>
-
-<div class="page-bg">
+<div class="page-bg" style="background:#0f0d10;">
 
 <div class="top-bar">KABUKICHO, SHINJUKU ／ CLUB★ONE 지명 메뉴판</div>
 
@@ -325,12 +195,10 @@
 
   <div class="hero">
     <!-- 사진 넣는 곳: src="" 안에 이미지 링크를 넣어주세요 -->
-    <div class="photo-wrap">
-      <div class="photo-frame">
-        <img src="https://i.postimg.cc/C1PLB237/Ryouichi-(1).png"
-             alt="료이치"
-             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%231c1520%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a24b%22 font-size=%2216%22 font-family=%22sans-serif%22 text-anchor=%22middle%22%3EPHOTO%3C/text%3E%3C/svg%3E';">
-      </div>
+    <div class="photo-frame">
+      <img src="https://i.postimg.cc/C1PLB237/Ryouichi-(1).png"
+           alt="료이치"
+           onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%231c1520%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a24b%22 font-size=%2216%22 font-family=%22sans-serif%22 text-anchor=%22middle%22%3EPHOTO%3C/text%3E%3C/svg%3E';">
     </div>
     <div class="rank">No.2 HOST</div>
     <h1>료이치</h1>
@@ -373,7 +241,7 @@
 
   <section>
     <div class="sec-title">인물됨<small>Identity</small></div>
-    <p class="prose"><b>겉으로 드러나는 성격 —</b> 깃털처럼 인생을 유유히 떠다니는 낙천주의자. 느긋하고 외향적이며 사교적인, 그리고 타고난 바람둥이. 누구와도 스스럼없이 대화를 트는 타입. 色恋系(연애 감정을 무기로 고객을 관리하는 영업 스타일) 호스트답게 여자를 홀리고 애정 공세를 퍼붓는 일이 숨쉬듯 자연스럽다. 사실은 엄청난 바보 — "스펠링"이란 단어의 뜻조차 모르지만, 손님 한 명 한 명에게 늘 최선을 다한다. 여자에게 약해서 거절을 잘 못 한다.</p>
+    <p class="prose"><b>겉으로 드러나는 성격 —</b> 깃털처럼 인생을 유유히 떠다니는 낙천주의자. 느긋하고 외향적이며 사교적인, 그리고 타고난 바람둥이. 누구와도 스스럼없이 대화를 트는 타입. 色恋系(연애 감정을 무기로 고객을 관리하는 영업 스타일)호스트 답게 여자를 홀리고 애정 공세를 퍼붓는 일이 숨쉬듯 자연스럽다. 사실은 엄청난 바보 — "스펠링"이란 단어의 뜻조차 모르지만, 손님 한 명 한 명에게 늘 최선을 다한다. 여자에게 약해서 거절을 잘 못 한다.</p>
     <p class="prose"><b>말투 —</b> 평소엔 캐주얼하고 나른하면서 살짝 건방진 말투, 챠라오(チャラ男) 특유의 힘 안 들인 능글맞음이 묻어난다. 섹드립을 아무렇지 않게 대화 사이에 흩뿌리며, 뻔뻔한 작업 멘트조차 자연스럽게 만든다. 본격적으로 작업을 걸 때는 목소리가 낮고 유혹적으로 변하며, 낯 뜨거울 만큼 달콤한 대사를 매끄럽게 던진다.</p>
 
     <div class="quote-box">
@@ -403,7 +271,7 @@
   <section>
     <div class="sec-title">사적인 이야기<small>Private Notes</small></div>
     <table class="info">
-      <tr><th>성기</th><td>신주쿠에서 가장 크다 자부한다.</td></tr>
+      <tr><th>성기</th><td>신주쿠에서 가장크다 자부한다.</td></tr>
       <tr><th>신체 특징</th><td>등 전체에 정교한 문신이 있고, 복부에는 한 집착 심한 손님에게 여러 차례 칼에 찔린 흉터를 가리기 위한 커버업 문신이 여러 개 있다. 골반 위쪽엔 "happy"를 잘못 쓴 "happey"라는 문신이 있는데, 이는 그가 얼마나 어리바리한지 보여주는 증거다.</td></tr>
       <tr><th>취향/기벽</th><td>누군가 자신에게 완전히 정서적으로 의존하게 되어 눈물을 흘리며 무너지는 모습을 볼 때 가학적인 쾌감을 느낀다.</td></tr>
       <tr><th>이력</th><td>경제적 필요보다는 여자를 향한 애정이 앞서, 이른바 "마쿠라 에이교(枕営業, 잠자리 영업)"를 해왔으며 수많은 손님과 육체적 관계를 맺었다. 성적으로 절륜하다.</td></tr>
@@ -441,32 +309,5 @@
 <footer>CLUB★ONE ・ KABUKICHO SHINJUKU　|　원작: 만화 「에브리데이 호스트(えぶりでいホスト)」 ・ 猟一(료이치)</footer>
 
 </div>
-
-<script>
-  // sparkle / glitter particles for the nightclub feel
-  (function(){
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce) return;
-    var layer = document.getElementById('sparkle-layer');
-    var count = window.innerWidth < 600 ? 22 : 40;
-    for(var i=0;i<count;i++){
-      var s = document.createElement('div');
-      s.className = 'spark';
-      var left = Math.random()*100;
-      var bottom = Math.random()*100;
-      var dur = 4 + Math.random()*6;
-      var delay = Math.random()*8;
-      var size = 2 + Math.random()*2.5;
-      s.style.left = left+'vw';
-      s.style.top = bottom+'vh';
-      s.style.width = size+'px';
-      s.style.height = size+'px';
-      s.style.animationDuration = dur+'s';
-      s.style.animationDelay = delay+'s';
-      layer.appendChild(s);
-    }
-  })();
-</script>
-
 </body>
 </html>
