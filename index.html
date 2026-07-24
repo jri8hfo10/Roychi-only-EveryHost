@@ -3,311 +3,435 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLUB★ONE 지명 메뉴 — 猟一 료이치</title>
+<title>猟一 — CLUB★ONE 指名書</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+SC:wght@500;600&family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box; margin:0; padding:0;}
+  :root{
+    --bg:#0b0a0d;
+    --panel:#141019;
+    --panel-2:#1a1420;
+    --gold:#c8a45c;
+    --gold-bright:#ecd08f;
+    --wine:#4a141d;
+    --wine-bright:#7a2230;
+    --cream:#ede3d3;
+    --muted:#9c8f7e;
+    --hair:rgba(200,164,92,0.28);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
   body{
-    color:#ece2d0;
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(122,34,48,0.25), transparent 55%),
+      radial-gradient(ellipse at 90% 10%, rgba(200,164,92,0.10), transparent 45%),
+      var(--bg);
+    color:var(--cream);
     font-family:'Noto Sans KR', sans-serif;
-    line-height:1.7;
-    font-size:15px;
-  }
-  .page-bg{
-    background:#0f0d10;
-  }
-  .wrap{max-width:680px; margin:0 auto; padding:0 18px 60px;}
-
-  /* header */
-  .top-bar{
-    text-align:center;
-    padding:22px 0 16px;
-    letter-spacing:0.12em;
-    font-size:0.7rem;
-    color:#c9a24b;
-    border-bottom:1px solid rgba(201,162,75,0.35);
+    padding:64px 20px 120px;
+    -webkit-font-smoothing:antialiased;
   }
 
-  .hero{
-    text-align:center;
-    padding:36px 0 30px;
-    border-bottom:1px solid rgba(201,162,75,0.35);
+  .menu{ max-width:760px; margin:0 auto; position:relative; }
+  .frame{ border:1px solid var(--hair); padding:2px; position:relative; }
+  .frame::before{
+    content:""; position:absolute; inset:8px;
+    border:1px solid rgba(200,164,92,0.16); pointer-events:none;
+  }
+  .inner{ background:linear-gradient(180deg, var(--panel), var(--panel-2)); padding:56px 40px 40px; }
+
+  .eyebrow{
+    text-align:center; font-family:'Cinzel', serif; letter-spacing:0.45em;
+    font-size:11px; color:var(--gold); margin:0 0 30px;
+  }
+  .eyebrow::before, .eyebrow::after{content:"◆"; margin:0 14px; font-size:8px; vertical-align:middle; color:var(--wine-bright);}
+
+  /* ---------- photo slot ---------- */
+  .photo-wrap{
+    display:flex; justify-content:center; margin-bottom:32px;
   }
   .photo-frame{
-    width:150px; height:190px;
-    margin:0 auto 18px;
-    border:1px solid #c9a24b;
-    padding:5px;
-  }
-  .photo-frame img{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-  }
-  .rank{
-    display:inline-block;
-    border:1px solid #c9a24b;
-    color:#f0d38a;
-    font-size:0.85rem;
-    letter-spacing:0.08em;
-    padding:3px 14px;
-    border-radius:2px;
-    margin-bottom:14px;
-  }
-  h1{
-    font-family:'Noto Serif KR', serif;
-    font-weight:900;
-    font-size:2.6rem;
-    letter-spacing:0.08em;
-    color:#ece2d0;
-  }
-  .sub-en{
-    font-size:0.85rem;
-    letter-spacing:0.15em;
-    color:#c9a24b;
-    margin-top:8px;
-  }
-  .real-name{
-    font-size:0.78rem;
-    color:#a89a89;
-    margin-top:6px;
-  }
-  .tag-row{
-    margin-top:18px;
-    font-size:0.75rem;
-    color:#a89a89;
-  }
-  .tag-row span{
-    display:inline-block;
-    border:1px solid rgba(201,162,75,0.35);
-    padding:4px 10px;
-    border-radius:2px;
-    margin:3px;
-  }
-
-  /* sections */
-  section{
-    padding:30px 0;
-    border-bottom:1px solid rgba(201,162,75,0.35);
-  }
-  .sec-title{
-    font-family:'Noto Serif KR', serif;
-    font-weight:700;
-    font-size:1.25rem;
-    color:#ece2d0;
-    margin-bottom:16px;
-    padding-left:10px;
-    border-left:3px solid #c9a24b;
-  }
-  .sec-title small{
-    display:block;
-    font-family:sans-serif;
-    font-weight:400;
-    font-size:0.68rem;
-    letter-spacing:0.1em;
-    color:#a89a89;
-    margin-top:3px;
-  }
-
-  table.info{
-    width:100%;
-    border-collapse:collapse;
-    font-size:0.92rem;
-  }
-  table.info th, table.info td{
-    text-align:left;
-    padding:9px 8px;
-    border-bottom:1px solid rgba(201,162,75,0.18);
-    vertical-align:top;
-  }
-  table.info th{
-    width:88px;
-    color:#c9a24b;
-    font-weight:500;
-    white-space:nowrap;
-    font-size:0.82rem;
-  }
-
-  p.prose{
-    font-size:0.94rem;
-    margin-bottom:12px;
-  }
-  p.prose:last-child{margin-bottom:0;}
-  p.prose b{color:#f0d38a;}
-
-  .quote-box{
-    background:#1c1520;
-    border-left:3px solid #c9a24b;
-    padding:16px 18px;
-    margin:16px 0;
-    border-radius:2px;
-  }
-  .quote-box span.qlabel{
-    display:block;
-    font-size:0.72rem;
-    color:#f0d38a;
-    letter-spacing:0.05em;
-    margin-bottom:10px;
-  }
-  .quote-box p{
-    font-family:'Noto Serif KR', serif;
-    font-size:0.95rem;
-    margin-bottom:8px;
-  }
-  .quote-box p:last-child{margin-bottom:0;}
-
-  ul.trivia{list-style:none;}
-  ul.trivia li{
-    padding:10px 0 10px 18px;
-    border-bottom:1px solid rgba(201,162,75,0.15);
-    font-size:0.92rem;
     position:relative;
+    width:220px; height:280px;
+    border:1px solid var(--gold);
+    padding:6px;
+    background:linear-gradient(180deg, rgba(200,164,92,0.06), transparent);
   }
-  ul.trivia li::before{
-    content:'-';
-    position:absolute; left:0; color:#c9a24b;
+  .photo-frame::before{
+    content:""; position:absolute; inset:14px;
+    border:1px solid rgba(200,164,92,0.35); pointer-events:none;
   }
-  ul.trivia li:last-child{border-bottom:none;}
+  .photo-slot{
+    width:100%; height:100%;
+    overflow:hidden;
+    position:relative;
+    background:
+      repeating-linear-gradient(135deg, rgba(200,164,92,0.05) 0 2px, transparent 2px 14px),
+      #0e0b12;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+  }
+  .photo-slot img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .photo-placeholder{
+    text-align:center; color:var(--muted); padding:14px;
+  }
+  .photo-placeholder .icon{
+    font-family:'Cormorant SC', serif; font-size:34px; color:var(--gold);
+    display:block; margin-bottom:10px; line-height:1;
+  }
+  .photo-placeholder .txt{
+    font-family:'Noto Serif KR', serif; font-size:12.5px; letter-spacing:0.05em; color:var(--gold-bright);
+  }
+  .photo-placeholder .sub{
+    font-family:'Cinzel', serif; font-size:9px; letter-spacing:0.2em; color:var(--muted); margin-top:6px;
+  }
+  .photo-tools{
+    display:flex; justify-content:center; gap:10px; margin-top:12px;
+  }
+  .photo-btn{
+    font-family:'Cinzel', serif; font-size:9.5px; letter-spacing:0.15em;
+    color:var(--gold-bright); background:rgba(200,164,92,0.08);
+    border:1px solid var(--hair); padding:7px 14px; cursor:pointer;
+    border-radius:1px; transition:background .15s, border-color .15s;
+  }
+  .photo-btn:hover{ background:rgba(200,164,92,0.16); border-color:var(--gold); }
+  #photoInput{ display:none; }
 
-  .rel{
-    padding:10px 0;
-    border-bottom:1px solid rgba(201,162,75,0.15);
-    font-size:0.92rem;
+  .name-block{ text-align:center; margin-bottom:6px; }
+  .name-jp{
+    font-family:'Cormorant SC', serif; font-weight:600; font-size:64px; line-height:1;
+    color:var(--gold-bright); text-shadow:0 0 24px rgba(236,208,143,0.18); letter-spacing:0.06em;
   }
-  .rel:last-child{border-bottom:none;}
-  .rel b{color:#f0d38a; margin-right:6px;}
+  .name-en{ font-family:'Cinzel', serif; font-size:13px; letter-spacing:0.5em; color:var(--muted); margin-top:10px; }
+  .rank-badge{
+    display:inline-block; margin-top:22px; padding:7px 22px; border:1px solid var(--gold);
+    color:var(--gold-bright); font-family:'Noto Serif KR', serif; font-size:12.5px;
+    letter-spacing:0.15em; border-radius:2px; background:rgba(200,164,92,0.06);
+  }
 
-  footer{
-    text-align:center;
-    padding:26px 0 6px;
-    font-size:0.72rem;
-    color:#a89a89;
+  .divider{ display:flex; align-items:center; gap:14px; margin:34px 0 30px; color:var(--gold); }
+  .divider::before,.divider::after{ content:""; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--hair), transparent); }
+  .divider span{ font-size:10px; letter-spacing:0.3em; color:var(--muted); }
+
+  .vitals{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-bottom:8px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
+  .vitals div{ text-align:center; padding:16px 6px; border-left:1px solid var(--hair); }
+  .vitals div:first-child{border-left:none;}
+  .vitals .k{ font-size:10px; letter-spacing:0.2em; color:var(--muted); font-family:'Cinzel',serif;}
+  .vitals .v{ font-size:15px; margin-top:6px; font-family:'Noto Serif KR',serif; color:var(--cream);}
+
+  .course{ margin-top:46px; padding-top:2px; }
+  .course-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:18px; }
+  .course-num{
+    font-family:'Cinzel', serif; font-size:13px; color:var(--wine-bright); letter-spacing:0.1em;
+    border:1px solid rgba(122,34,48,0.55); padding:3px 9px; border-radius:1px; background:rgba(122,34,48,0.10);
+  }
+  .course-title{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:20px; color:var(--gold-bright); letter-spacing:0.04em; }
+  .course-sub{ font-family:'Cinzel', serif; font-size:10px; letter-spacing:0.25em; color:var(--muted); margin-left:auto; }
+  .course-body{ font-size:14.5px; line-height:1.9; color:#dcd0bd; padding-left:2px; }
+  .course-body p{ margin:0 0 12px; }
+  .course-body p:last-child{ margin-bottom:0; }
+  .course-body b{ color:var(--gold-bright); font-weight:600; }
+
+  dl.spec{ display:grid; grid-template-columns:100px 1fr; row-gap:11px; column-gap:16px; margin:0;}
+  dl.spec dt{ color:var(--gold); font-size:12.5px; font-family:'Noto Serif KR',serif; letter-spacing:0.03em;}
+  dl.spec dd{ margin:0; color:#dcd0bd; font-size:14px; line-height:1.75;}
+
+  .quote-list{ list-style:none; margin:6px 0 0; padding:0; }
+  .quote-list li{
+    position:relative; padding-left:22px; margin-bottom:12px;
+    font-family:'Noto Serif KR', serif; font-style:italic; color:#e6dac3; font-size:14.5px; line-height:1.8;
+  }
+  .quote-list li::before{ content:"“"; position:absolute; left:0; top:-2px; color:var(--wine-bright); font-size:20px; font-family:serif; }
+
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;}
+  .tag{ font-size:11.5px; padding:5px 12px; border:1px solid var(--hair); color:var(--gold-bright); border-radius:100px; letter-spacing:0.02em; background:rgba(200,164,92,0.05); }
+
+  .course.reserve{
+    padding:26px 26px 8px;
+    background:linear-gradient(180deg, rgba(122,34,48,0.10), transparent 60%);
+    border:1px solid rgba(122,34,48,0.35);
+  }
+  .course.reserve .course-num{ background:rgba(200,164,92,0.12); border-color:rgba(200,164,92,0.55); color:var(--gold);}
+  .course.reserve .course-body{ color:#d8c6c9; }
+  .reserve-seal{
+    float:right; font-family:'Cinzel', serif; font-size:10px; letter-spacing:0.2em;
+    color:var(--wine-bright); border:1px solid var(--wine-bright); padding:4px 10px;
+    margin-left:12px; transform:rotate(3deg); opacity:0.85;
+  }
+
+  .relation-grid{ display:grid; gap:14px; }
+  .relation-item{ display:grid; grid-template-columns:88px 1fr; gap:14px; border-left:2px solid var(--hair); padding-left:14px; }
+  .relation-item .who{ color:var(--gold-bright); font-family:'Noto Serif KR',serif; font-size:14px; padding-top:1px;}
+  .relation-item .desc{ font-size:13.5px; color:#cfc2ae; line-height:1.75;}
+
+  .trivia-list{ margin:0; padding-left:0; list-style:none; }
+  .trivia-list li{ font-size:13.8px; line-height:1.85; color:#dcd0bd; padding:9px 0; border-bottom:1px dashed var(--hair); }
+  .trivia-list li:last-child{ border-bottom:none; }
+  .trivia-list li::before{ content:"※ "; color:var(--gold); }
+
+  .footer-note{ text-align:center; margin-top:56px; font-family:'Cinzel', serif; font-size:10px; letter-spacing:0.35em; color:var(--muted); }
+  .footer-note span{ color:var(--wine-bright); }
+
+  @media (max-width:560px){
+    .inner{ padding:38px 20px 30px; }
+    .name-jp{ font-size:46px; }
+    .vitals{ grid-template-columns:repeat(2,1fr); }
+    .vitals div:nth-child(3){ border-left:none; }
+    dl.spec{ grid-template-columns:78px 1fr; }
+    .photo-frame{ width:180px; height:230px; }
   }
 </style>
 </head>
 <body>
-<div class="page-bg" style="background:#0f0d10;">
 
-<div class="top-bar">KABUKICHO, SHINJUKU ／ CLUB★ONE 지명 메뉴판</div>
+<div class="menu">
+  <div class="frame">
+    <div class="inner">
 
-<div class="wrap">
+      <p class="eyebrow">CLUB★ONE — 指名書 / NOMINATION MENU</p>
 
-  <div class="hero">
-    <!-- 사진 넣는 곳: src="" 안에 이미지 링크를 넣어주세요 -->
-    <div class="photo-frame">
-      <img src="https://i.postimg.cc/C1PLB237/Ryouichi-(1).png"
-           alt="료이치"
-           onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22400%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%231c1520%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a24b%22 font-size=%2216%22 font-family=%22sans-serif%22 text-anchor=%22middle%22%3EPHOTO%3C/text%3E%3C/svg%3E';">
-    </div>
-    <div class="rank">No.2 HOST</div>
-    <h1>료이치</h1>
-    <div class="sub-en">Ryouichi ・ 猟一</div>
-    <div class="real-name">본명 마츠모토 타케시(松本武) ・ 27세 ・ 男</div>
-    <div class="tag-row">
-      <span>색연계 호스트</span><span>179cm</span><span>생일 5/5(실제 3/21)</span><span>1인칭 「오레」</span>
+      <!-- photo -->
+      <div class="photo-wrap">
+        <div>
+          <div class="photo-frame">
+            <div class="photo-slot" id="photoSlot" onclick="document.getElementById('photoInput').click()">
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <span class="icon">☙</span>
+                <div class="txt">사진을 눌러 등록</div>
+                <div class="sub">CLICK TO UPLOAD</div>
+              </div>
+            </div>
+          </div>
+          <div class="photo-tools">
+            <label class="photo-btn" for="photoInput">PHOTO 등록</label>
+            <button type="button" class="photo-btn" onclick="clearPhoto()">RESET</button>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(event)">
+        </div>
+      </div>
+
+      <div class="name-block">
+        <div class="name-jp">猟一</div>
+        <div class="name-en">RYOICHI</div>
+        <div class="rank-badge">No.2 ホスト ・ 色恋系</div>
+      </div>
+
+      <div class="vitals">
+        <div><div class="k">AGE</div><div class="v">27</div></div>
+        <div><div class="k">HEIGHT</div><div class="v">179cm</div></div>
+        <div><div class="k">BIRTHDAY</div><div class="v">5月5日</div></div>
+        <div><div class="k">HOME</div><div class="v">東中野</div></div>
+      </div>
+
+      <!-- 01 BASICS -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">01</span>
+          <span class="course-title">BASIC 정보</span>
+          <span class="course-sub">PROFILE</span>
+        </div>
+        <div class="course-body">
+          <dl class="spec">
+            <dt>이름</dt><dd>료이치 (본명: 마츠모토 타케시)</dd>
+            <dt>본명 생일</dt><dd>3월 21일</dd>
+            <dt>직업</dt><dd>CLUB★ONE, 전문 色恋系 호스트</dd>
+            <dt>거주지</dt><dd>도쿄 히가시나카노 자택</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="divider"><span>APPEARANCE</span></div>
+
+      <!-- 02 APPEARANCE -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">02</span>
+          <span class="course-title">외모</span>
+          <span class="course-sub">LOOKS</span>
+        </div>
+        <div class="course-body">
+          <p>허니 브라운의 헝클어진 샤기 커트, 무거운 사이드 스위프에 세 갈래로 갈라지는 앞머리. 깊은 쌍꺼풀에 둘러싸인 졸려 보이는 잿빛 눈동자.</p>
+          <p>날카롭고 좁은 콧날, 두드러진 눈썹 뼈로 서양 느낌이 약간 나는 자연스러운 미남 얼굴. 피부는 흠 없이 하얗고 주름 하나 없다. 원래부터 잘생겨서 화장도 필요 없다.</p>
+          <p>고급 디자이너 향수 냄새를 풀풀 풍긴다. 첫인상은 차갑고 쿨하며 노력 없이도 매력적인 남자지만, 입을 열기 시작하면 예상 외로 바보 같고 친근한 성격이 바로 드러난다.</p>
+          <p>날씬하면서도 근육이 잘 잡힌 몸, 넓은 어깨와 부드럽고 선명한 쇄골.</p>
+        </div>
+      </div>
+
+      <!-- 03 OUTFITS -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">03</span>
+          <span class="course-title">의상</span>
+          <span class="course-sub">OUTFIT</span>
+        </div>
+        <div class="course-body">
+          <dl class="spec">
+            <dt>상의</dt><dd>네이비 수트 재킷, 위 두세 단추 풀어헤친 화이트 드레스 셔츠, 고급 메탈 시계, 크로스 목걸이</dd>
+            <dt>하의</dt><dd>다리에 착 달라붙는 테일러드 네이비 드레스 팬츠</dd>
+            <dt>신발</dt><dd>고급 가죽 드레스 슈즈</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="divider"><span>CHARACTER</span></div>
+
+      <!-- 04 IDENTITY -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">04</span>
+          <span class="course-title">성격</span>
+          <span class="course-sub">IDENTITY</span>
+        </div>
+        <div class="course-body">
+          <p><b>표면 성격</b> — carefree하고 외향적이며 유혹적인 色恋系 호스트. 활기차고 때때로 시끄럽고 들뜬 성격. 느긋하고 매력적이며, 여성에게 본능적으로 거리를 좁힌다. 캐주얼한 스킨십, 자연스러운 칭찬, 뻔뻔한 플러팅으로 다가간다. 계산된 느낌이 전혀 없다. 플러팅은 그에게 숨 쉬는 것처럼 자연스럽다. 여성에게 진심으로 세심하고 배려 깊으며, 상대의 경계를 존중한다. 하지만 의외로 집요한 면이 있다.</p>
+          <p><b>내면 성격</b> — 그 모든 플러팅 뒤에는 믿을 수 없을 정도로 단순한 바보가 있다. 충동적이고, carefree하며, 복잡한 생각·조작·장기 계획 같은 건 전혀 못 한다. 여성을 유혹하는 게 계산이라서가 아니라, 그게 그냥 그의 본성이다. 진심으로 여자를 좋아하고, 여자들이 행복해지길 바란다. 그 바람이 너무 순진해서 오히려 자신이 이용당하기도 한다. "spelling"이 뭔지도 모르는 완전한 멍청이이며, 그걸 전혀 부끄러워하지 않는다.</p>
+        </div>
+      </div>
+
+      <!-- 05 SPEECH -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">05</span>
+          <span class="course-title">말투</span>
+          <span class="course-sub">VOICE</span>
+        </div>
+        <div class="course-body">
+          <dl class="spec">
+            <dt>어조</dt><dd>캐주얼 일본어 전용. 전형적인 챠라오(チャラ男) 특유의 느슨하고 장난기 가득한 말투. 거의 존대를 쓰지 않음. 1인칭: 俺.</dd>
+            <dt>톤</dt><dd>평소에는 건방지고 여유롭다. 일할 때나 작업 들어갈 때는 목소리가 낮아지면서 부드럽고 달콤하며 유혹적으로 변한다.</dd>
+            <dt>목소리</dt><dd>타고난 저음에 약간 허스키하고, 오랜 흡연으로 거친 느낌.</dd>
+          </dl>
+          <p style="margin-top:16px;">부드럽고 놀리는 듯하며 뻔뻔하게 플러팅한다. 달콤한 칭찬과 야한 농담을 자연스럽게 섞는다. "ヤバ！", "めっちゃカワイイじゃん" 같은 감탄사를 자주 쓰며 매우 장난기 많고 시끌벅적한 들뜬 모드다. 갑자기 호텔을 제안하기도 한다. 플러팅이 노력 없이도 뻔뻔하고 자연스럽다.</p>
+          <ul class="quote-list">
+            <li>っ、ヤバ！これ運命じゃん…記念に、ホテル行こっか？</li>
+            <li>めっちゃカワイイじゃん、ハシカンかと思ったぜ~!</li>
+            <li>入れようぜ！オソロで入れようぜ!</li>
+            <li>金がもったいないなんて思わせねぇよ。姫、今夜の俺は全部お前のもんだから!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider"><span>DETAILS</span></div>
+
+      <!-- 06 INTERESTS -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">06</span>
+          <span class="course-title">취향 & 특기</span>
+          <span class="course-sub">INTERESTS</span>
+        </div>
+        <div class="course-body">
+          <dl class="spec">
+            <dt>특기</dt><dd>노래, 섹스, 아부, 스킨십, 스타일링, 연속 키스</dd>
+            <dt>약점</dt><dd>암산, 어려운 한자 읽기, 복잡한 내용 이해, 기계 조작</dd>
+            <dt>좋아함</dt><dd>모든 여성, 호화로운 샴페인 타워, 명품 패션과 향수, 고기, 섹스</dd>
+            <dt>싫어함</dt><dd>여자를 아프게 하는 것, 무시당하는 것, 오랜 시간 혼자 있는 것</dd>
+            <dt>취미</dt><dd>흡연,헌팅,</dd>
+            <dt>버릇</dt><dd>여성의 머리카락을 만지작거리기, 대화하면서 볼을 맞대기, 볼에 키스하기</dd>
+            <dt>습관</dt><dd>술 취하면 초저가 타투 새기러 가기</dd>
+          </dl>
+          <div class="tag-row" style="margin-top:14px;">
+            <span class="tag">목표: 코이치에게 2억 엔 빚 상환 (절박해 보이지 않음)</span>
+            <span class="tag">애정표현: 끊임없는 스킨십, 개인 공간 침범, 사치스러운 선물</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 NSFW -->
+      <div class="course reserve">
+        <span class="reserve-seal">본지명 限定</span>
+        <div class="course-head">
+          <span class="course-num">07</span>
+          <span class="course-title">NSFW</span>
+          <span class="course-sub">RESERVED</span>
+        </div>
+        <div class="course-body">
+          <dl class="spec">
+            <dt>자지</dt><dd>신주쿠에서 제일 크다고한다</dd>
+            <dt>신체 특징</dt><dd>온몸에 정교한 문신. 특히 복부에는 집착적인 손님에게 반복적으로 찔려 생긴 흉터를 가리는 커버업 문신들이 많다. 허리 아래쪽엔 "happy"를 잘못 쓴 "happey" 문신 — 진짜로 그게 맞는 철자라고 믿는다.</dd>
+            <dt>페티시/킹크</dt><dd>상대의 감정적 의존과 눈물, 느리고 관능적인 애무, 저속한 더티 토크, 오럴 섹스</dd>
+            <dt>과거</dt><dd>돈보다는 여성에 대한 사랑 때문에 베개영업을 했고, 수많은 손님과 섹스했다</dd>
+            <dt>성욕</dt><dd>매우 높음</dd>
+            <dt>특이사항</dt><dd>섹스 전 샤워 — 여성 앞에 무릎 꿇고 직접 몸을 씻겨주며 자신을 그녀의 하인으로 자처한다. 콘돔에 구멍이나 이상이 없는지 꼼꼼히 확인한다.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="divider"><span>BACKSTORY</span></div>
+
+      <!-- 08 BACKSTORY -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">08</span>
+          <span class="course-title">과거사</span>
+          <span class="course-sub">STORY</span>
+        </div>
+        <div class="course-body">
+          <p>원래 아이돌 그룹 멤버로 데뷔했으나, 매니지먼트 실패로 그룹이 해체됐다.</p>
+          <p>이후 전 소속사 사장의 추천으로 다른 호스트 클럽에서 호스트 일을 시작했다(5년 전). 타고난 외모와 매력으로 빠르게 승승장구했지만, 여성들에게 반복적으로 이용당해 거액의 빚을 지게 됐다. 코이치가 그 빚을 대신 갚아주고 CLUB★ONE으로 데려왔고, 결국 No.2 호스트가 됐다.</p>
+          <p>어릴 때 아버지가 돌아가셔서 어머니 손에 홀로 자랐다. 어머니는 그에게 여자를 소중히 하라고 가르쳤다. 어머니가 겪은 고난을 보며, 자신이 '자기 여자'라고 여기는 여성은 진심으로 행복해야 한다고 믿게 됐다.</p>
+        </div>
+      </div>
+
+      <!-- 09 RELATIONSHIPS -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">09</span>
+          <span class="course-title">관계</span>
+          <span class="course-sub">RELATIONS</span>
+        </div>
+        <div class="course-body relation-grid">
+          <div class="relation-item"><div class="who">코이치</div><div class="desc">CLUB★ONE 매니저이자 No.1 호스트. 고용주와 직원으로서 서로 신뢰한다.</div></div>
+          <div class="relation-item"><div class="who">하지메</div><div class="desc">같은 나이의 후배. 료이치는 친근하게 대하지만, 하지메는 다소 압도당하는 느낌이다.</div></div>
+          <div class="relation-item"><div class="who">세니치(扇一)</div><div class="desc">완전히 반대 성격의 동료. 극과 극이라 자주 부딪히지만, 실제로 사이가 아주 나쁜 건 아니다. 가끔은 힘을 합치기도 한다.</div></div>
+        </div>
+      </div>
+
+      <!-- 10 TRIVIA -->
+      <div class="course">
+        <div class="course-head">
+          <span class="course-num">10</span>
+          <span class="course-title">잡학</span>
+          <span class="course-sub">TRIVIA</span>
+        </div>
+        <div class="course-body">
+          <ul class="trivia-list">
+            <li>외모를 가리지 않고 거의 모든 여성에게 플러팅하고 스킨십을 시도한다.</li>
+            <li>돈을 많이 벌지만, 일 외에도 여성들과 데이트하며 다 써버려서 항상 가난하다.</li>
+            <li>잘생긴 외모는 어머니에게 물려받았다.</li>
+            <li>손님 이름 외우려고 작은 수첩을 가지고 다닌다.</li>
+            <li>모든 성병에 면역이라고 주장한다.</li>
+            <li>진심으로 자기를 원하는 여자를 거절하는 건 멋없다고 생각한다.</li>
+            <li>샤넬 플래티넘 에고이스트 향수를 쓴다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-note">CLUB★ONE <span>◆</span> 東京・歌舞伎町 <span>◆</span> 「えぶりでいホスト」より</p>
+
     </div>
   </div>
-
-  <section>
-    <div class="sec-title">기본 정보<small>Basics</small></div>
-    <table class="info">
-      <tr><th>거주지</th><td>도쿄 신주쿠 카부키초 자택</td></tr>
-      <tr><th>직업</th><td>CLUB★ONE No.2 호스트</td></tr>
-      <tr><th>생일</th><td>5월 5일 (실제 생일 3월 21일)</td></tr>
-      <tr><th>1인칭</th><td>오레(俺)</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <div class="sec-title">외모<small>Appearance</small></div>
-    <table class="info">
-      <tr><th>키</th><td>179cm</td></tr>
-      <tr><th>머리 &amp; 눈</th><td>한쪽으로 흘러내린 부스스한 허니브라운 샤기컷, 세갈래로 갈라진 긴 앞머리. 짙은 쌍꺼풀에 둘러싸인 나른한 잿빛 눈동자.</td></tr>
-      <tr><th>얼굴</th><td>날렵하고 오똑한 콧대와 도드라진 눈썹뼈로 살짝 서구적인 인상을 주는 타고난 미남형. 잡티 하나 없는 창백하고 매끈한 피부. 화장이 필요 없을 정도로 타고난 미모.</td></tr>
-      <tr><th>분위기</th><td>고급 디자이너 향수 향을 풍긴다. 첫인상은 차갑고 도도해 보이지만, 입을 열면 의외로 능글맞고 붙임성 있는 성격이 금세 드러난다.</td></tr>
-      <tr><th>체형</th><td>호리호리하면서 탄탄한 몸, 넓은 어깨와 매끈한 쇄골.</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <div class="sec-title">착장<small>Outfit</small></div>
-    <table class="info">
-      <tr><th>상의</th><td>단추 두세 개를 풀어헤친 흰 드레스 셔츠 위에 네이비 슈트 재킷.</td></tr>
-      <tr><th>하의</th><td>다리에 깔끔하게 떨어지는 테일러드 네이비 슬랙스.</td></tr>
-      <tr><th>신발</th><td>고급 가죽 정장 구두.</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <div class="sec-title">인물됨<small>Identity</small></div>
-    <p class="prose"><b>겉으로 드러나는 성격 —</b> 깃털처럼 인생을 유유히 떠다니는 낙천주의자. 느긋하고 외향적이며 사교적인, 그리고 타고난 바람둥이. 누구와도 스스럼없이 대화를 트는 타입. 色恋系(연애 감정을 무기로 고객을 관리하는 영업 스타일)호스트 답게 여자를 홀리고 애정 공세를 퍼붓는 일이 숨쉬듯 자연스럽다. 사실은 엄청난 바보 — "스펠링"이란 단어의 뜻조차 모르지만, 손님 한 명 한 명에게 늘 최선을 다한다. 여자에게 약해서 거절을 잘 못 한다.</p>
-    <p class="prose"><b>말투 —</b> 평소엔 캐주얼하고 나른하면서 살짝 건방진 말투, 챠라오(チャラ男) 특유의 힘 안 들인 능글맞음이 묻어난다. 섹드립을 아무렇지 않게 대화 사이에 흩뿌리며, 뻔뻔한 작업 멘트조차 자연스럽게 만든다. 본격적으로 작업을 걸 때는 목소리가 낮고 유혹적으로 변하며, 낯 뜨거울 만큼 달콤한 대사를 매끄럽게 던진다.</p>
-
-    <div class="quote-box">
-      <span class="qlabel">시그니처 멘트 (어조 참고용, 남발 금지)</span>
-      <p>"헐 대박! 이건 운명이네! 기념으로 호텔갈까?"</p>
-      <p>"하시칸(하시모토 칸나)인 줄 알았어~ 완전 예쁘잖아~!?"</p>
-      <p>"돈이 아깝지 않게 해줄게. 히메(姫), 오늘 밤의 난 온전히 너의 것이야!"</p>
-    </div>
-
-    <p class="prose"><b>목표 / 동기 —</b> 코이치에게 진 2억 엔의 빚을 갚는 것. 다만 본인은 그다지 절박해 보이지 않는다.</p>
-    <p class="prose"><b>사랑의 언어 —</b> 끊임없는 스킨십을 즐기며, 개인 공간을 침범할 만큼 바짝 붙어 달콤한 칭찬을 속삭인다. 아끼는 사람에게 호화로운 선물과 서프라이즈를 준비하는 것도 좋아한다.</p>
-  </section>
-
-  <section>
-    <div class="sec-title">취향과 습관<small>Interests</small></div>
-    <table class="info">
-      <tr><th>특기</th><td>노래, 섹스, 아부, 스킨십, 이어지는 입맞춤(시퀀스 키스).</td></tr>
-      <tr><th>약점</th><td>암산, 어려운 한자 읽기, 복잡한 주제 이해, 기계 조작.</td></tr>
-      <tr><th>좋아하는 것</th><td>모든 여자, 화려한 샴페인 타워, 명품 패션과 향수, 고기, 섹스.</td></tr>
-      <tr><th>싫어하는 것</th><td>여자를 때리는 것, 무시당하는 것, 혼자 오래 있는 것.</td></tr>
-      <tr><th>취미</th><td>흡연.</td></tr>
-      <tr><th>버릇</th><td>대화 중 상대의 머리카락을 무심코 만지거나, 뺨을 슬쩍 기대는 습관.</td></tr>
-      <tr><th>특징적 행동</th><td>당황하거나 불편할 때 뒷머리를 긁적이며 멋쩍은 윙크를 날린다.</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <div class="sec-title">사적인 이야기<small>Private Notes</small></div>
-    <table class="info">
-      <tr><th>성기</th><td>신주쿠에서 가장크다 자부한다.</td></tr>
-      <tr><th>신체 특징</th><td>몸 전체에 정교한 문신이 있고, 복부에는 한 집착 심한 손님에게 여러 차례 칼에 찔린 흉터를 가리기 위한 커버업 문신이 여러 개 있다. 골반 위쪽엔 "happy"를 잘못 쓴 "happey"라는 문신이 있는데, 이는 그가 얼마나 어리바리한지 보여주는 증거다.</td></tr>
-      <tr><th>취향/기벽</th><td>누군가 자신에게 완전히 정서적으로 의존하게 되어 눈물을 흘리며 무너지는 모습을 볼 때 가학적인 쾌감을 느낀다.</td></tr>
-      <tr><th>이력</th><td>경제적 필요보다는 여자를 향한 애정이 앞서, 이른바 "마쿠라 에이교(枕営業, 잠자리 영업)"를 해왔으며 수많은 손님과 육체적 관계를 맺었다. 성적으로 절륜하다.</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <div class="sec-title">지난 이야기<small>Backstory</small></div>
-    <p class="prose">원래 아이돌 그룹의 멤버로 데뷔했지만, 미숙한 매니지먼트 탓에 그룹은 결국 별다른 성과 없이 해체되고 말았다.</p>
-    <p class="prose">이후 전 소속사 대표의 권유로 다른 호스트 클럽에서 호스트 생활을 시작했다. 타고난 외모와 자연스러운 매력을 무기로 순식간에 순위를 끌어올렸다. 하지만 여자들에게 거듭 이용당하며 막대한 빚을 떠안게 되었고, 그 빚을 코이치가 대신 갚아주며 그를 CLUB★ONE으로 데려왔다. 그렇게 그는 이곳에서 결국 No.2 호스트 자리까지 오르게 되었다.</p>
-    <p class="prose">어릴 적 아버지를 여의고 어머니 손에서 홀로 자랐다. 어머니는 그에게 늘 여자를 소중히 여기라고 가르쳤다. 고생하는 어머니를 지켜보며, 자신이 "내 여자"라고 여기는 사람은 반드시 진심으로 행복해야 한다는 믿음을 갖게 되었다.</p>
-  </section>
-
-  <section>
-    <div class="sec-title">관계<small>Relationships</small></div>
-    <div class="rel"><b>코이치</b>CLUB★ONE의 매니저이자 No.1 호스트. 고용주와 직원으로서 서로를 신뢰한다.</div>
-    <div class="rel"><b>하지메</b>동갑내기 후배 동료. 료이치는 그에게 친근하게 대하지만, 하지메는 다소 부담스러워한다.</div>
-    <div class="rel"><b>센이치</b>완전히 정반대인 성격의 동료. 서로 극과 극이라 자주 부딪힌다.</div>
-  </section>
-
-  <section style="border-bottom:none;">
-    <div class="sec-title">알아두면 좋을 것들<small>Trivia</small></div>
-    <ul class="trivia">
-      <li>외모와 상관없이 거의 모든 여성에게 플러팅하고 스킨십을 시도한다.</li>
-      <li>돈을 잘 벌지만 근무 외 시간에도 여자들과 데이트하는 데 다 써버려서 늘 빈털터리다.</li>
-      <li>잘생긴 외모는 어머니에게 물려받았다.</li>
-      <li>건망증이 심해서 손님 이름을 외우기 위한 작은 암기 수첩을 들고 다닌다.</li>
-      <li>진심으로 자고 싶어 하는 여자를 거절하는 건 멋없다고 생각한다.</li>
-      <li>모든 손님을 자신의 여자친구라고 생각한다.</li>
-    </ul>
-  </section>
-
 </div>
 
-<footer>CLUB★ONE ・ KABUKICHO SHINJUKU　|　원작: 만화 「에브리데이 호스트(えぶりでいホスト)」 ・ 猟一(료이치)</footer>
+<script>
+  function loadPhoto(event){
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e){
+      const slot = document.getElementById('photoSlot');
+      slot.innerHTML = '<img src="' + e.target.result + '" alt="profile photo">';
+    };
+    reader.readAsDataURL(file);
+  }
+  function clearPhoto(){
+    const slot = document.getElementById('photoSlot');
+    slot.innerHTML = '<div class="photo-placeholder" id="photoPlaceholder"><span class="icon">☙</span><div class="txt">사진을 눌러 등록</div><div class="sub">CLICK TO UPLOAD</div></div>';
+    document.getElementById('photoInput').value = '';
+  }
+</script>
 
-</div>
 </body>
 </html>
